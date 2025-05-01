@@ -43,7 +43,7 @@ const navItems = [
         inactiveIcon: <MiscellaneousServicesOutlined/>,
     },
     {
-        path: '/about-us',
+        path: '/about',
         label: 'About Us',
         icon: <Info color="secondary"/>,
         inactiveIcon: <InfoOutlined/>,

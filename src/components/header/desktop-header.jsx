@@ -50,7 +50,7 @@ const navItems = [
         label: 'Services',
     },
     {
-        path: '/about-us',
+        path: '/about',
         label: 'About Us',
     },
     {
