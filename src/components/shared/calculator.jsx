@@ -34,14 +34,14 @@ const Calculator = () => {
             packaging: false,
         },
         onSubmit: (values) => {
-            const base = 50;
+            const base = 5000;
             const cost =
                 base +
-                (Number(values.distance) || 0) * 0.5 +
-                (values.fragile ? 10 : 0) +
-                (values.express ? 20 : 0) +
-                (values.insurance ? 15 : 0) +
-                (values.packaging ? 5 : 0);
+                (Number(values.distance) || 0) * 5 +
+                (values.fragile ? 15 : 0) +
+                (values.express ? 200 : 0) +
+                (values.insurance ? 150 : 0) +
+                (values.packaging ? 50 : 0);
             setPrice(cost);
         },
     });
@@ -51,8 +51,9 @@ const Calculator = () => {
             <form onSubmit={formik.handleSubmit}>
                 <Grid container={true} spacing={2}>
                     {/* Distance Select */}
-                    <Grid size={{xs: 12, sm: 6}}>
-                        <FormControl fullWidth>
+                    <Grid size={{xs: 12, md: 6}}>
+                        <Typography sx={{mb: 1}} variant="body2">Distance</Typography>
+                        <FormControl fullWidth={true}>
                             <InputLabel>Distance</InputLabel>
                             <Select
                                 name="distance"
@@ -69,14 +70,17 @@ const Calculator = () => {
                     </Grid>
 
                     {/* Destination */}
-                    <Grid size={{xs: 12, sm: 6}}>
-                        <FormControl fullWidth>
+                    <Grid size={{xs: 12, md: 6}}>
+                        <Typography sx={{mb: 1}} variant="body2">Destination</Typography>
+                        <FormControl fullWidth={true}>
                             <InputLabel>Destination</InputLabel>
                             <OutlinedInput
                                 label="Destination"
                                 name="destination"
                                 value={formik.values.destination}
                                 onChange={formik.handleChange}
+                                required={true}
+                                placeholder="Destination"
                             />
                         </FormControl>
                     </Grid>
@@ -89,8 +93,12 @@ const Calculator = () => {
                             <OutlinedInput
                                 label="Width (cm)"
                                 name="width"
+                                type="number"
                                 value={formik.values.width}
                                 onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                required={true}
+                                placeholder="Width (cm)"
                             />
                         </FormControl>
                     </Grid>
@@ -101,8 +109,12 @@ const Calculator = () => {
                             <OutlinedInput
                                 label="Height (cm)"
                                 name="height"
+                                type="number"
                                 value={formik.values.height}
                                 onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                required={true}
+                                placeholder="Height (cm)"
                             />
                         </FormControl>
                     </Grid>
@@ -113,8 +125,12 @@ const Calculator = () => {
                             <OutlinedInput
                                 label="Weight (kg)"
                                 name="weight"
+                                type="number"
                                 value={formik.values.weight}
                                 onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                required={true}
+                                placeholder={'Weight (kg)'}
                             />
                         </FormControl>
                     </Grid>
