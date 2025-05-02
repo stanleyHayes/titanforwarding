@@ -339,7 +339,7 @@ const HomePage = () => {
 
                                 <Grid container={true} spacing={4} justifyContent="center">
                                     {TITAN_FORWARDING_DATA.brands.map((brand, index) => (
-                                        <Grid size={{xs: 12, sm: 6, md: 6, lg: 3}} key={index}>
+                                        <Grid size={{xs: 6, sm: 6, md: 6, lg: 3}} key={index}>
                                             <Brand brand={brand}/>
                                         </Grid>
                                     ))}
@@ -360,7 +360,7 @@ const HomePage = () => {
                     </Container>
                 </Box>
                 <HeroBanner/>
-                <Box sx={{py: 8, backgroundColor: 'background.default'}}>
+                <Box id="calculator" sx={{py: 8, backgroundColor: 'background.default'}}>
                     <Container>
                         <Typography align="center" variant="body1" sx={{
                             fontWeight: 700,

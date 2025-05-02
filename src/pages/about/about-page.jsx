@@ -275,7 +275,7 @@ const AboutPage = () => {
 
                     <Grid container={true} spacing={4} justifyContent="center">
                         {TITAN_FORWARDING_DATA.brands.map((brand, index) => (
-                            <Grid size={{xs: 12, md: 6, lg: 3}} key={index}>
+                            <Grid size={{xs: 6, md: 6, lg: 3}} key={index}>
                                 <Brand brand={brand}/>
                             </Grid>
                         ))}

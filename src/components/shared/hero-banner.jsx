@@ -1,4 +1,4 @@
-import {Box, Typography, Button, Stack, Container} from '@mui/material';
+import {Box, Typography, Button, Stack, Container, Grid} from '@mui/material';
 import banner from "./../../assets/images/section-bg-02.jpg";
 
 const HeroBanner = () => {
@@ -27,22 +27,29 @@ const HeroBanner = () => {
                     We’re one of the leading shipping and logistics providers.
                 </Typography>
 
-                <Stack direction="row" spacing={2} justifyContent="center">
-                    <Button
-                        variant="contained"
-                        size="large"
-                        sx={{backgroundColor: '#FFD400', color: '#000', fontWeight: 600}}
-                    >
-                        Get A Quote
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        size="large"
-                        sx={{color: '#fff', borderColor: '#fff', fontWeight: 600}}
-                    >
-                        Estimate cost
-                    </Button>
-                </Stack>
+                <Grid container spacing={2}>
+                    <Grid size={{xs: 12, md: 'auto'}}>
+                        <Button
+                            fullWidth={true}
+                            variant="contained"
+                            size="large"
+                            sx={{backgroundColor: '#FFD400', color: '#000', fontWeight: 600}}
+                        >
+                            Get A Quote
+                        </Button>
+                    </Grid>
+                    <Grid size={{xs: 12, md: 'auto'}}>
+                        <Button
+                            fullWidth={true}
+                            href="#calculator"
+                            variant="outlined"
+                            size="large"
+                            sx={{color: '#fff', borderColor: '#fff', fontWeight: 600}}
+                        >
+                            Estimate cost
+                        </Button>
+                    </Grid>
+                </Grid>
             </Container>
         </Box>
     );
