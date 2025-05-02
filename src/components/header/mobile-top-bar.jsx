@@ -11,7 +11,7 @@ const MobileTopBar = () => {
             <Stack sx={{width: '100%'}} direction="row" spacing={2} justifyContent="space-between" alignItems="center">
                 <Link href={`tel:${phone}`}>
                     <Typography variant="caption" sx={{color: 'text.secondary'}}>
-                        Call us now {phone}
+                        {phone}
                     </Typography>
                 </Link>
 

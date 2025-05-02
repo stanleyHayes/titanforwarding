@@ -13,7 +13,10 @@ const Layout = ({children}) => {
 
     return (
         <Box
-            sx={{}}
+            sx={{
+                maxWidth: "100vw",
+                overflowX: 'hidden'
+            }}
             component={motion.div}
             initial={{}}
             exit={{}}

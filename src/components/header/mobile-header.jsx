@@ -26,7 +26,7 @@ const MobileHeader = () => {
                     whileHover={{scale: 1.1}}
                 />
 
-                <Typography variant="body1" sx={{color: 'secondary.main'}}>
+                <Typography variant="body1" fontWeight={700} sx={{color: 'secondary.main'}}>
                     Titan Forwarding
                 </Typography>
 
