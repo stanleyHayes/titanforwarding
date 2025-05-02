@@ -7,6 +7,7 @@ import {Provider} from "react-redux";
 import {LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import store from "./redux/app/store.js";
+import 'react-multi-carousel/lib/styles.css';
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>

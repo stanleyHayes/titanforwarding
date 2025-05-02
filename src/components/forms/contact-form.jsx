@@ -26,7 +26,7 @@ const ContactForm = () => {
         validateOnBlur: true,
         validateOnChange: true,
         onSubmit: (values) => {
-
+            console.log(values);
         }
     });
 

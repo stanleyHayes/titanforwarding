@@ -207,7 +207,7 @@ const LogisticsPage = () => {
                 <Box sx={{py: 8, backgroundColor: 'background.default'}}>
                     <Container>
                         <LogisticsServicesSection
-                            services={TITAN_FORWARDING_DATA.services}
+                            services={TITAN_FORWARDING_DATA.logisticsServices}
                             title="Our Logistics Capabilities"
                         />
                     </Container>

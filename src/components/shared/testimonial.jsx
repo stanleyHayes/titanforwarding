@@ -20,13 +20,13 @@ const Testimonial = ({testimonial}) => {
                 </Avatar>
 
                 <Typography
-                    variant="body1"
+                    variant="h6"
                     sx={{mb: 3, color: 'rgba(0, 0, 0, 0.95)', lineHeight: 1.8}}
                 >
                     {testimonial.quote}
                 </Typography>
 
-                <Typography variant="subtitle1" fontWeight={700} sx={{color: 'rgba(0, 0, 0, 0.75)'}}>
+                <Typography variant="h6" fontWeight={700} sx={{color: 'rgba(0, 0, 0, 0.75)'}}>
                     {testimonial.name}
                 </Typography>
                 <Typography variant="caption" color="text.secondary" sx={{color: 'rgba(0, 0, 0, 0.55)'}}>

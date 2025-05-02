@@ -5,7 +5,7 @@ import Copyright from "./copyright.jsx";
 
 const Footer = () => {
     return (
-        <Box sx={{borderTopWidth: 1, borderTopStyle: "solid", borderTopColor: "border.default"}}>
+        <Box>
             <Box sx={{backgroundColor: "background.paper", py: {xs: 0, md: 4}}}>
                 <Box sx={{display: {xs: "none", lg: "block"}}}>
                     <DesktopFooter/>

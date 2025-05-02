@@ -13,10 +13,9 @@ const Brand = ({brand}) => {
                 cursor: 'pointer',
                 position: 'relative',
                 overflow: 'hidden',
-                backgroundColor: hovered ? 'background.transparent' : 'rgba(0, 0, 0, 0.09)',
                 transition: 'background-color 0.3s ease-in-out',
                 height: '100%',
-                minHeight: 150
+                minHeight: 100
             }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}

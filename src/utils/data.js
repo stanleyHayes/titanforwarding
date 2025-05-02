@@ -14,6 +14,16 @@ import logo2 from "./../assets/images/logo02.jpg";
 import logo3 from "./../assets/images/logo03.jpg";
 import logo4 from "./../assets/images/logo04.jpg";
 
+import icon1 from "./../assets/images/icon01.png";
+import icon2 from "./../assets/images/icon02.png";
+import icon3 from "./../assets/images/icon03.png";
+
+import solutionImage1 from "./../assets/images/solution-image01.jpg";
+import solutionImage2 from "./../assets/images/solution-image02.jpg";
+import solutionImage3 from "./../assets/images/solution-image03.jpg";
+import solutionImage4 from "./../assets/images/solution-image04.jpg";
+import solutionImage5 from "./../assets/images/solution-image05.jpg";
+
 const offices = [
     {
         title: "Netherlands Office (Head Office)",
@@ -284,7 +294,7 @@ const brands = [
     }
 ];
 
-export const testimonials = [
+ const testimonials = [
     {
         name: "Michael Zhang",
         role: "Head of Supply Chain, TekNova Asia",
@@ -298,6 +308,86 @@ export const testimonials = [
             "Their warehousing and fulfillment services have streamlined our entire distribution workflow. Titan Forwarding is now our go-to logistics partner.",
     }
 ];
+
+ const carouselSlides = [
+    {
+        title: "Global Logistics, Local Expertise",
+        caption: "Seamless freight forwarding, warehousing, and supply chain solutions—delivered with precision.",
+        button: "Get a Quote",
+        link: "/quote",
+    },
+    {
+        title: "Built to Deliver",
+        caption: "From full container loads to last-mile delivery, we move your business forward with reliability and speed.",
+        button: "Explore Our Services",
+        link: "/services",
+    },
+    {
+        title: "Your Trusted Freight Partner",
+        caption: "Backed by global networks and certified expertise, Titan Forwarding is built to handle every shipment, everywhere.",
+        button: "Contact Our Team",
+        link: "/contact",
+    },
+    {
+        title: "Trusted by Thousands Worldwide",
+        caption: `"Titan Forwarding made international shipping effortless. Their support was incredible every step of the way."`,
+        button: "Read More Testimonials",
+        link: "/testimonials",
+    },
+];
+
+ const experts = [
+    {
+        title: "Leadership",
+        description: "Experts who have extensive, hands-on experience in supply chain management.",
+        image: icon1, // Replace with your actual image
+    },
+    {
+        title: "Technology",
+        description: "Innovative and varied use of technology on the road, ocean, railways, and in the air.",
+        image: icon2
+    },
+    {
+        title: "Solution",
+        description: "Global leaders in intermodal, less-than-truckload, and supply chain management.",
+        image: icon3,
+    },
+];
+
+
+ const solutions = [
+    {
+        title: "Food & Beverage",
+        label: "Solutions",
+        image: solutionImage1,
+        link: "#",
+    },
+    {
+        title: "Consumer Packaged Goods",
+        label: "Solutions",
+        image: solutionImage2,
+        link: "#",
+    },
+    {
+        title: "Global 4PL",
+        label: "Solutions",
+        image: solutionImage3,
+        link: "#",
+    },
+    {
+        title: "Transportation",
+        label: "Solutions",
+        image: solutionImage4,
+        link: "#",
+    },
+    {
+        title: "Air Cargo",
+        label: "Solutions",
+        image: solutionImage5,
+        link: "#",
+    },
+];
+
 
 
 export const TITAN_FORWARDING_DATA = {
@@ -313,5 +403,8 @@ export const TITAN_FORWARDING_DATA = {
     industries,
     team,
     brands,
-    testimonials
+    testimonials,
+    carouselSlides,
+    experts,
+    solutions
 }
