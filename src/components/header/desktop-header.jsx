@@ -2,10 +2,7 @@ import {Button, Stack, Toolbar} from "@mui/material";
 import logo from "../../assets/images/logo.png";
 import {motion} from "motion/react";
 import NavLink from "../shared/nav-link.jsx";
-import {useLocation} from "react-router";
-import {selectUI, UI_ACTION_CREATORS} from "../../redux/features/ui/ui-slice.js";
-import HamburgerToggle from "../shared/hamburger-toggle.jsx";
-import {useDispatch, useSelector} from "react-redux";
+import {useLocation, Link} from "react-router";
 
 const MotionBox = motion.create(Toolbar);
 const MotionImg = motion.create('img');
@@ -56,28 +53,26 @@ const navItems = [
     {
         path: '/contact',
         label: 'Contact',
-    },
+    }
 ];
 
 const DesktopHeader = () => {
 
     const {pathname} = useLocation();
-    const dispatch = useDispatch();
-    const {drawerOpen} = useSelector(selectUI);
 
     return (
         <MotionBox
-            component="nav"
             sx={{
-                width: '100%',
-                backgroundColor: 'background.default',
-                color: 'text.primary'
+                backgroundColor: "background.transparent",
+                backdropFilter: 'blur(35px)',
+                WebkitBackdropFilter: 'blur(35px)',
+                boxShadow: '0 1px 10px rgba(0,0,0,0.05)',
+                zIndex: 1000,
             }}
             variants={containerVariants}
             initial="initial"
             animate="animate"
-            exit="exit"
-        >
+            exit="exit">
             <Stack
                 direction="row"
                 justifyContent="space-between"
@@ -114,16 +109,11 @@ const DesktopHeader = () => {
                         </MotionBox>
                     ))}
                 </Stack>
-
-                <Stack direction="row" spacing={1}>
-                    <HamburgerToggle
-                        isOpen={drawerOpen}
-                        toggle={() => dispatch(UI_ACTION_CREATORS.toggleDrawerOpen(!drawerOpen))}
-                    />
-                    <Button variant="contained" color="secondary" sx={{color: 'rgba(0, 0, 0, 0.85)'}}>
-                        Get Quote
+                <Link to="/tracking" style={{textDecoration: 'none'}}>
+                    <Button component="span" variant="contained" color="secondary" sx={{color: 'rgba(0, 0, 0, 0.85)'}}>
+                        Track Shipment
                     </Button>
-                </Stack>
+                </Link>
             </Stack>
         </MotionBox>
     )

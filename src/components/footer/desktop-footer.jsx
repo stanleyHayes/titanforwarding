@@ -201,7 +201,7 @@ const DesktopFooter = () => {
                                     endAdornment={
                                         <InputAdornment position="end">
                                             <Button
-                                                sx={{textTransform: "none"}}
+                                                sx={{textTransform: "none", color: 'rgba(0, 0, 0, 0.75)'}}
                                                 endIcon={<ArrowRightAlt/>}
                                                 color="secondary"
                                                 fullWidth={true}

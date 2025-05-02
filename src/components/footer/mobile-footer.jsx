@@ -122,7 +122,7 @@ const MobileFooter = () => {
                                     endAdornment={
                                         <InputAdornment position="end">
                                             <Button
-                                                sx={{textTransform: "none"}}
+                                                sx={{textTransform: "none", color: 'rgba(0,0,0,.85)'}}
                                                 endIcon={<ArrowRightAlt/>}
                                                 color="secondary"
                                                 fullWidth={true}

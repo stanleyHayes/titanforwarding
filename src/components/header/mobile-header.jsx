@@ -11,7 +11,13 @@ const MobileHeader = () => {
     const {drawerOpen} = useSelector(selectUI);
     const dispatch = useDispatch();
     return (
-        <Toolbar>
+        <Toolbar
+            sx={{
+                backgroundColor: "background.transparent",
+                backdropFilter: 'blur(35px)',
+                WebkitBackdropFilter: 'blur(35px)',
+                zIndex: 1000,
+            }}>
             <Stack sx={{width: '100%'}} direction="row" spacing={2} justifyContent="space-between" alignItems="center">
                 <MotionImg
                     src={logo}

@@ -1,5 +1,6 @@
 const TITAN_FORWARDING_THEME_VARIANT_KEY = 'TITAN_FORWARDING_THEME_VARIANT_KEY';
-const BASE_SERVER_URL = 'http://localhost:5000/api/v1';
+// const BASE_SERVER_URL = 'http://localhost:5000/api/v1';
+const BASE_SERVER_URL = 'https://titanforwarding-api.onrender.com/api/v1';
 const TITAN_FORWARDING_LANGUAGE = 'en-US';
 
 

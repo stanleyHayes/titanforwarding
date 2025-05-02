@@ -10,7 +10,7 @@ import {
     LocalShipping,
     LocalShippingOutlined, MiscellaneousServices, MiscellaneousServicesOutlined,
     Newspaper,
-    NewspaperOutlined
+    NewspaperOutlined, TrackChanges, TrackChangesOutlined
 } from "@mui/icons-material";
 
 const MotionBox = motion.create(Box);
@@ -53,6 +53,12 @@ const navItems = [
         label: 'Contact',
         icon: <ContactMail color="secondary"/>,
         inactiveIcon: <ContactMailOutlined/>,
+    },
+    {
+        path: '/tracking',
+        label: 'Tracking',
+        icon: <TrackChanges color="secondary"/>,
+        inactiveIcon: <TrackChangesOutlined/>,
     },
 ];
 
