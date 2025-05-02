@@ -1,6 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {TRACKING_API} from "../../../api/tracking.api.js";
-import {tracking} from "./tracking.js";
 
 
 const trackShipment = createAsyncThunk(
@@ -19,7 +18,7 @@ const trackShipment = createAsyncThunk(
 const shipmentSlice = createSlice({
     name: 'tracking',
     initialState: {
-        shipment: tracking,
+        shipment: null,
         loading: false,
         error: null
     },
