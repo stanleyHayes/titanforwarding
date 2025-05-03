@@ -6,7 +6,13 @@ import MobileHeader from "./mobile-header.jsx";
 
 const Header = () => {
     return (
-        <AppBar elevation={0} square={true} position="fixed">
+        <AppBar
+            sx={{
+                backgroundColor: "background.transparent",
+                backdropFilter: 'blur(15px)',
+                WebkitBackdropFilter: 'blur(15px)'
+            }}
+            elevation={0} square={true} position="fixed">
             <Box sx={{display: {xs: 'none', lg: 'block'}}}>
                 <DesktopTopBar/>
                 <DesktopHeader/>

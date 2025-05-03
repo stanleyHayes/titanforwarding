@@ -21,7 +21,7 @@ const MobileTopBar = () => {
                         icon={
                             <LinkedIn
                                 sx={{
-                                    color: 'white',
+                                    color: 'icon.primary',
                                     transition: 'color 0.3s ease',
                                     textTransform: 'none',
                                     '&:hover': {
@@ -37,7 +37,7 @@ const MobileTopBar = () => {
                         icon={
                             <Twitter
                                 sx={{
-                                    color: 'white',
+                                    color: 'icon.primary',
                                     transition: 'color 0.3s ease',
                                     textTransform: 'none',
                                     '&:hover': {
@@ -53,7 +53,7 @@ const MobileTopBar = () => {
                         icon={
                             <Facebook
                                 sx={{
-                                    color: 'white',
+                                    color: 'icon.primary',
                                     transition: 'color 0.3s ease',
                                     textTransform: 'none',
                                     '&:hover': {

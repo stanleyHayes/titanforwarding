@@ -2,7 +2,7 @@ import {createTheme} from "@mui/material";
 
 const lightTheme = createTheme({
     typography: {
-        fontFamily: 'TTSquares, EuclidCircularA, EuclidCircularB, Outfit, Eudoxus Sans, GoogleSans, Urbanist, Gilroy, Manrope'
+        fontFamily: 'Outfit, TTSquares, EuclidCircularA, EuclidCircularB, Eudoxus Sans, GoogleSans, Urbanist, Gilroy, Manrope'
     },
     palette: {
         mode: 'light',
@@ -48,7 +48,7 @@ const lightTheme = createTheme({
             default: "rgba(88,91,99,0.05)"
         },
         icon: {
-            primary: "rgba(30,58,138,0.3)",
+            primary: "rgba(30,58,138,0.85)",
             secondary: "rgba(225,109,24,0.3)",
             red: "rgba(239,68,68,0.3)",
             green: "rgba(34,197,94,0.3)",
@@ -66,16 +66,19 @@ const lightTheme = createTheme({
             orange: "#fb923c",
             blue: "#3b82f6",
             muted: "#e5e7eb"
-        }
+        },
+        border: {
+            primary: "rgba(96,165,250,0.09)",
+        },
     },
     shape: {
-        borderRadius: 0
+        borderRadius: 8
     }
 });
 
 const darkTheme = createTheme({
     typography: {
-        fontFamily: 'TTSquares, EuclidCircularA, EuclidCircularB, Outfit, Eudoxus Sans, GoogleSans, Urbanist, Gilroy, Manrope'
+        fontFamily: 'Outfit, EuclidCircularA, TTSquares, EuclidCircularB,  Eudoxus Sans, GoogleSans, Urbanist, Gilroy, Manrope'
     },
     palette: {
         mode: 'dark',
@@ -113,7 +116,7 @@ const darkTheme = createTheme({
             contrastText: "#ffffff"
         },
         light: {
-            primary: "rgba(96,165,250,0.1)",
+            primary: "rgba(96,165,250,0.05)",
             secondary: "rgba(249,115,22,0.05)",
             red: "rgba(239,68,68,0.1)",
             green: "rgba(34,197,94,0.1)",
@@ -121,11 +124,14 @@ const darkTheme = createTheme({
             default: "rgba(255,255,255,0.05)"
         },
         icon: {
-            primary: "rgba(96,165,250,0.3)",
+            primary: "rgba(96,165,250,0.5)",
             secondary: "rgba(249,115,22,0.3)",
             red: "rgba(239,68,68,0.3)",
             green: "rgba(34,197,94,0.3)",
             border: "rgba(96,165,250,0.3)"
+        },
+        border: {
+            primary: "rgba(96,165,250,0.09)",
         },
         text: {
             primary: "#f8fafc",
@@ -142,7 +148,7 @@ const darkTheme = createTheme({
         }
     },
     shape: {
-        borderRadius: 0
+        borderRadius: 8
     }
 });
 

@@ -2,9 +2,14 @@ import {Box, Button, FormControl, FormHelperText, Grid, OutlinedInput, TextField
 import image from "./../../assets/images/video-thumb.jpg";
 import {useFormik} from "formik";
 import * as yup from "yup";
+import {useNavigate} from "react-router";
+import {selectTracking, TRACKING_ACTION_CREATORS} from "../../redux/features/tracking/tracking-slice.js";
+import {useDispatch, useSelector} from "react-redux";
 
 const TrackShipmentSection = () => {
 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const formik = useFormik({
         initialValues: {tracking: ""},
@@ -14,10 +19,12 @@ const TrackShipmentSection = () => {
         validateOnBlur: true,
         validateOnChange: true,
         onSubmit: (values) => {
-            console.log(values);
+            dispatch(TRACKING_ACTION_CREATORS.trackShipment({trackingID: values.tracking}));
+            navigate(`/tracking/?tracking_number=${values.tracking}`);
         }
     });
 
+    const {loading} = useSelector(selectTracking);
 
     return (
         <Grid container sx={{minHeight: 400}}>
@@ -73,36 +80,59 @@ const TrackShipmentSection = () => {
                             Track your shipment
                         </Typography>
 
-                        <Typography sx={{mb: 2, color: 'rgba(0, 0, 0, 0.85)'}} variant="body2">Tracking
-                            Number</Typography>
-                        <FormControl fullWidth={true} variant="outlined">
+                        <Typography sx={{mb: 2, color: 'rgba(0, 0, 0, 0.85)'}} variant="body2">
+                            Tracking Number
+                        </Typography>
+
+                        <FormControl fullWidth variant="outlined">
                             <OutlinedInput
                                 value={formik.values.tracking}
                                 placeholder="Enter tracking number"
                                 name="tracking"
                                 type="text"
-                                required={true}
+                                required
                                 size="medium"
-                                label="Tracking"
                                 onBlur={formik.handleBlur}
                                 onChange={formik.handleChange}
                                 error={Boolean(formik.touched.tracking && formik.errors.tracking)}
-                                fullWidth={true}
+                                fullWidth
+                                sx={{
+                                    color: 'rgba(0, 0, 0, 0.9)', // Text color
+                                    '&::placeholder': {
+                                        color: 'rgba(0, 0, 0, 0.7)',
+                                        opacity: 1,
+                                    },
+                                    '& .MuiOutlinedInput-notchedOutline': {
+                                        borderColor: 'rgba(0, 0, 0, 0.6)',
+                                    },
+                                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                                        borderColor: 'rgba(0, 0, 0, 0.8)',
+                                    },
+                                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                        borderColor: 'rgba(0, 0, 0, 0.85)',
+                                    },
+                                }}
+                                inputProps={{
+                                    style: {
+                                        color: 'rgba(0, 0, 0, 0.9)',
+                                    },
+                                }}
                             />
                             {formik.touched.tracking && formik.errors.tracking && (
-                                <FormHelperText>
-                                    {formik.touched.tracking && formik.errors.tracking}
+                                <FormHelperText error>
+                                    {formik.errors.tracking}
                                 </FormHelperText>
                             )}
                         </FormControl>
 
+
                         <Button
                             variant="contained"
                             fullWidth={true}
+                            disabled={loading}
                             type="submit"
                             sx={{
                                 mt: 3,
-                                borderRadius: 0,
                                 backgroundColor: '#1a1a1a',
                                 color: '#fff',
                                 fontWeight: 700,
@@ -112,7 +142,7 @@ const TrackShipmentSection = () => {
                                 },
                             }}
                         >
-                            SEARCH
+                            {loading ? 'Tracking...' : 'Search'}
                         </Button>
                     </Box>
                 </form>

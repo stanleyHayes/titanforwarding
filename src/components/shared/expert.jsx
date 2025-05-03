@@ -9,7 +9,7 @@ const Expert = ({expert}) => {
             variant="outlined"
             whileHover={{y: -10}}
             transition={{duration: 0.3}}
-            sx={{borderRadius: 0, height: '100%', px: 3}}
+            sx={{ height: '100%', px: 3}}
         >
             <CardContent sx={{flexGrow: 1}}>
                 <CardMedia

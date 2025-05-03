@@ -7,8 +7,12 @@ import {lazy, Suspense} from "react";
 import {AnimatePresence} from "motion/react";
 import Splash from "./components/shared/splash.jsx";
 import {THEMES} from "./utils/theme.js";
+import PageTransitionWrapper from "./components/shared/page-transition.jsx";
 
 const HomePage = lazy(() => import('./pages/home/home-page.jsx'));
+const PrivacyPage = lazy(() => import('./pages/others/privacy-page.jsx'));
+const TermsPage = lazy(() => import('./pages/others/terms-page.jsx'));
+
 const AboutPage = lazy(() => import('./pages/about/about-page.jsx'));
 const ContactPage = lazy(() => import('./pages/contact/contact-page.jsx'));
 const ServicesPage = lazy(() => import('./pages/services/services-page.jsx'));
@@ -31,8 +35,10 @@ function App() {
                         index={true}
                         path="/"
                         element={
-                            <Suspense fallback={<Splash/>}>
-                                <HomePage/>
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <HomePage />
+                                </PageTransitionWrapper>
                             </Suspense>
                         }
                     />
@@ -40,8 +46,10 @@ function App() {
                     <Route
                         path="/about"
                         element={
-                            <Suspense fallback={<Splash/>}>
-                                <AboutPage/>
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <AboutPage />
+                                </PageTransitionWrapper>
                             </Suspense>
                         }
                     />
@@ -49,8 +57,10 @@ function App() {
                     <Route
                         path="/contact"
                         element={
-                            <Suspense fallback={<Splash/>}>
-                                <ContactPage/>
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <ContactPage />
+                                </PageTransitionWrapper>
                             </Suspense>
                         }
                     />
@@ -58,8 +68,10 @@ function App() {
                     <Route
                         path="/services"
                         element={
-                            <Suspense fallback={<Splash/>}>
-                                <ServicesPage/>
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <ServicesPage />
+                                </PageTransitionWrapper>
                             </Suspense>
                         }
                     />
@@ -67,8 +79,10 @@ function App() {
                     <Route
                         path="/logistics"
                         element={
-                            <Suspense fallback={<Splash/>}>
-                                <LogisticsPage/>
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <LogisticsPage />
+                                </PageTransitionWrapper>
                             </Suspense>
                         }
                     />
@@ -76,8 +90,10 @@ function App() {
                     <Route
                         path="/tracking"
                         element={
-                            <Suspense fallback={<Splash/>}>
-                                <TrackingPage/>
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <TrackingPage />
+                                </PageTransitionWrapper>
                             </Suspense>
                         }
                     />
@@ -85,8 +101,32 @@ function App() {
                     <Route
                         path="/news"
                         element={
-                            <Suspense fallback={<Splash/>}>
-                                <NewsPage/>
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <NewsPage />
+                                </PageTransitionWrapper>
+                            </Suspense>
+                        }
+                    />
+
+                    <Route
+                        path="/privacy"
+                        element={
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <PrivacyPage />
+                                </PageTransitionWrapper>
+                            </Suspense>
+                        }
+                    />
+
+                    <Route
+                        path="/terms"
+                        element={
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <TermsPage />
+                                </PageTransitionWrapper>
                             </Suspense>
                         }
                     />
@@ -94,8 +134,10 @@ function App() {
                     <Route
                         path="*"
                         element={
-                            <Suspense fallback={<Splash/>}>
-                                <NotFoundPage/>
+                            <Suspense fallback={<Splash />}>
+                                <PageTransitionWrapper>
+                                    <NotFoundPage />
+                                </PageTransitionWrapper>
                             </Suspense>
                         }
                     />

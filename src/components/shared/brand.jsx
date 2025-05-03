@@ -31,7 +31,7 @@ const Brand = ({brand}) => {
                 style={{
                     width: '100%',
                     height: "100%",
-                    objectFit: "contain",
+                    objectFit: "fill",
                     mixBlendMode: hovered ? 'luminosity' : 'normal',
                     opacity: hovered ? 0.2 : 1,
                     transition: 'opacity 0.3s ease',

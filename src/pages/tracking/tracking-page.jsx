@@ -74,12 +74,13 @@ const TrackingPage = () => {
                 description="Enter your tracking number to get real-time updates on your cargo's location, estimated delivery time, and transit checkpoints."
                 image={banner}
             />
+            {loading && <LinearProgress variant="query" color="secondary"/>}
             <Box sx={{py: 8}}>
                 <Container>
                     {error && (
-                        <Alert severity="error" sx={{mt: 3}}>
+                        <Alert variant="outlined" severity="error" sx={{mb: 4}}>
                             <AlertTitle>Error</AlertTitle>
-                            {error}
+                            <Typography variant="body1" color="error">{error}</Typography>
                         </Alert>
                     )}
 
@@ -127,12 +128,13 @@ const TrackingPage = () => {
                                         sx={{py: 1.5}}
                                         type="submit"
                                         fullWidth={true}
+                                        disabled={loading || !formik.values.tracking_number}
                                         size="large"
                                         variant="outlined"
                                         color="secondary"
                                         startIcon={<TrackChanges/>}
                                     >
-                                        Track Shipment
+                                        {loading ? 'Tracking...' : 'Track Shipment'}
                                     </Button>
                                 </Grid>
                             </Grid>
@@ -153,18 +155,20 @@ const TrackingPage = () => {
                         >
                             <Divider sx={{my: 4}}/>
 
-                            <Typography variant="h5" gutterBottom>
+                            <Typography variant="h5" sx={{mb: 4}}>
                                 Shipment Summary
                             </Typography>
                             <Grid container spacing={2}>
                                 <Grid size={{xs: 12, md: 6}}>
                                     <Typography fontWeight={700} variant="subtitle2">Shipment ID:</Typography>
                                     <Typography>{shipment.shipment_id}</Typography>
-                                    <Typography fontWeight={700} variant="subtitle2" sx={{mt: 2}}>Dispatch
-                                        Date:</Typography>
+                                    <Typography fontWeight={700} variant="subtitle2" sx={{mt: 2}}>
+                                        Dispatch Date:
+                                    </Typography>
                                     <Typography>{new Date(shipment.dispatch_date).toLocaleDateString()}</Typography>
                                     <Typography fontWeight={700} variant="subtitle2" sx={{mt: 2}}>Mode of
-                                        Transport:</Typography>
+                                        Transport:
+                                    </Typography>
                                     <Typography>{shipment.mode_of_transport}</Typography>
                                     <Typography fontWeight={700} variant="subtitle2" sx={{mt: 2}}>Courier
                                         Company:</Typography>
@@ -174,23 +178,32 @@ const TrackingPage = () => {
                                 <Grid size={{xs: 12, md: 6}}>
                                     <Typography fontWeight={700} variant="subtitle2">Total Value:</Typography>
                                     <Typography>${shipment.shipment_value_usd.toLocaleString()}</Typography>
-                                    <Typography fontWeight={700} variant="subtitle2" sx={{mt: 2}}>Total
-                                        Cost:</Typography>
+                                    <Typography fontWeight={700} variant="subtitle2" sx={{mt: 2}}>
+                                        Total Cost:
+                                    </Typography>
                                     <Typography>${shipment.total_cost_usd.toLocaleString()}</Typography>
                                 </Grid>
                             </Grid>
 
                             <Divider sx={{my: 4}}/>
-                            <Typography variant="h6">Sender & Recipient</Typography>
+                            <Typography variant="h6" sx={{mb: 2}}>Sender & Recipient</Typography>
                             <Grid container spacing={2}>
                                 <Grid size={{xs: 12, md: 6}}>
-                                    <Typography fontWeight={700} variant="subtitle2">Sender:</Typography>
+                                    <Typography
+                                        fontWeight={700}
+                                        sx={{mb: 1}}
+                                        variant="subtitle2">
+                                        Sender:
+                                    </Typography>
                                     <Typography>{shipment.sender.name}</Typography>
                                     <Typography>{shipment.sender.address}</Typography>
                                     <Typography>{shipment.sender.contact}</Typography>
                                 </Grid>
                                 <Grid size={{xs: 12, md: 6}}>
-                                    <Typography fontWeight={700} variant="subtitle2">Recipient:</Typography>
+                                    <Typography
+                                        fontWeight={700}
+                                        sx={{mb: 1}}
+                                        variant="subtitle2">Recipient:</Typography>
                                     <Typography>{shipment.recipient.name}</Typography>
                                     <Typography>{shipment.recipient.address}</Typography>
                                     <Typography>{shipment.recipient.contact}</Typography>
@@ -202,7 +215,14 @@ const TrackingPage = () => {
                             {shipment.shipment_items.map((item, i) => (
                                 <Box key={i} sx={{mb: 2}}>
                                     <Typography><strong>{item.item_description}</strong> ({item.category})</Typography>
-                                    <Typography>Qty: {item.quantity} | Weight: {item.weight_kg}kg</Typography>
+                                    <Typography>
+                                        <Typography
+                                            display="inline"
+                                            fontWeight={700}
+                                            component="span"
+                                            variant="body2">
+                                            Qty:
+                                        </Typography> {item.quantity} | Weight: {item.weight_kg}kg</Typography>
                                     <Typography>Declared Value: ${item.declared_value_usd} |
                                         Serials: {item.item_serials}</Typography>
                                 </Box>
@@ -210,13 +230,41 @@ const TrackingPage = () => {
 
                             <Divider sx={{my: 4}}/>
 
-                            <Typography fontWeight={700} variant="h6">Insurance</Typography>
-                            <Typography>Policy #: {shipment.insurance.policy_number}</Typography>
-                            <Typography>Insurer: {shipment.insurance.insurer}</Typography>
-                            <Typography>Coverage: ${shipment.insurance.coverage_usd}</Typography>
+                            <Typography fontWeight={700} variant="h6" sx={{mb: 2}}>Insurance</Typography>
+                            <Typography>
+                                <Typography
+                                    display="inline"
+                                    fontWeight={700}
+                                    component="span"
+                                    variant="body2">
+                                    Policy #
+                                </Typography>
+                                : {shipment.insurance.policy_number}
+                            </Typography>
+                            <Typography>
+                                <Typography
+                                    display="inline"
+                                    fontWeight={700}
+                                    component="span"
+                                    variant="body2">
+                                    Insurer:
+                                </Typography>
+                                {shipment.insurance.insurer}
+                            </Typography>
+                            <Typography variant="body2" sx={{mb: 1, fontWeight: 700}}>
+                                <Typography
+                                    display="inline"
+                                    fontWeight={700}
+                                    component="span"
+                                    variant="body2">
+                                    Coverage
+                                </Typography>:
+                                ${shipment.insurance.coverage_usd}
+                            </Typography>
 
                             <Divider sx={{my: 4}}/>
-                            <Typography fontWeight={700} variant="h6">Documentation</Typography>
+
+                            <Typography fontWeight={700} variant="h6" sx={{mb: 2}}>Documentation</Typography>
                             {Object.entries(shipment.documentation).map(([key, value]) => (
                                 <Typography key={key}>
                                     {key.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}: {value}
@@ -224,7 +272,7 @@ const TrackingPage = () => {
                             ))}
 
                             <Divider sx={{my: 4}}/>
-                            <Typography variant="h5" gutterBottom>
+                            <Typography variant="h5" sx={{mb: 2}}>
                                 Tracking Progress
                             </Typography>
                             <Stepper
@@ -232,7 +280,7 @@ const TrackingPage = () => {
                                 activeStep={shipment.tracking_logs.findIndex(s => s.is_current_step)}>
                                 {shipment.tracking_logs.map((step, index) => (
                                     <Step color="secondary" key={index} completed={step.status === "completed"}>
-                                        <StepLabel>
+                                        <StepLabel color="secondary">
                                             <Typography fontWeight="bold">
                                                 {step.step_name} — {step.status}
                                             </Typography>

@@ -360,7 +360,7 @@ const HomePage = () => {
                     </Container>
                 </Box>
                 <HeroBanner/>
-                <Box id="calculator" sx={{py: 8, backgroundColor: 'background.default'}}>
+                <Box id="calculator" sx={{py: 8, backgroundColor: 'background.paper'}}>
                     <Container>
                         <Typography align="center" variant="body1" sx={{
                             fontWeight: 700,
@@ -380,7 +380,7 @@ const HomePage = () => {
                         <Calculator/>
                     </Container>
                 </Box>
-                <Box sx={{backgroundColor: "background.paper", py: 8}}>
+                <Box sx={{backgroundColor: "background.default", py: 8}}>
                     <Container maxWidth="lg">
                         <Stack direction="row" justifyContent="center" sx={{width: '100%', mb: 4}}>
                             {/* Logo */}

@@ -13,9 +13,8 @@ const BlogPost = ({post}) => {
             elevation={0}
             variant="outlined"
             sx={{
-                borderRadius: 0,
                 overflow: "hidden",
-                backgroundColor: "background.default",
+                backgroundColor: "background.paper",
                 transition: "all 0.3s ease-in-out",
                 height: "100%",
             }}

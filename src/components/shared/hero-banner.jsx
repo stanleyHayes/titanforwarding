@@ -27,7 +27,7 @@ const HeroBanner = () => {
                     We’re one of the leading shipping and logistics providers.
                 </Typography>
 
-                <Grid container spacing={2}>
+                <Grid container={true} justifyContent="center" spacing={2}>
                     <Grid size={{xs: 12, md: 'auto'}}>
                         <Button
                             fullWidth={true}

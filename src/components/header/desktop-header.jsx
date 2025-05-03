@@ -65,9 +65,7 @@ const DesktopHeader = () => {
             sx={{
                 backgroundColor: "background.transparent",
                 backdropFilter: 'blur(35px)',
-                WebkitBackdropFilter: 'blur(35px)',
-                boxShadow: '0 1px 10px rgba(0,0,0,0.05)',
-                zIndex: 1000,
+                WebkitBackdropFilter: 'blur(35px)'
             }}
             variants={containerVariants}
             initial="initial"

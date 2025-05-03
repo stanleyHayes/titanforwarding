@@ -28,7 +28,7 @@ const DesktopTopBar = () => {
                         icon={
                             <LinkedIn
                                 sx={{
-                                    color: 'white',
+                                    color: 'icon.primary',
                                     transition: 'color 0.3s ease',
                                     textTransform: 'none',
                                     '&:hover': {
@@ -45,7 +45,7 @@ const DesktopTopBar = () => {
                         icon={
                             <Twitter
                                 sx={{
-                                    color: 'white',
+                                    color: 'icon.primary',
                                     transition: 'color 0.3s ease',
                                     textTransform: 'none',
                                     '&:hover': {
@@ -62,7 +62,7 @@ const DesktopTopBar = () => {
                         icon={
                             <Facebook
                                 sx={{
-                                    color: 'white',
+                                    color: 'icon.primary',
                                     transition: 'color 0.3s ease',
                                     textTransform: 'none',
                                     '&:hover': {
