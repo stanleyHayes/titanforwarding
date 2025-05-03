@@ -1,4 +1,5 @@
 import {Box, Typography, Button, Card, CardContent, CardMedia} from "@mui/material";
+import logo from '../../assets/images/logo.png';
 
 const Splash = () => {
     return (
@@ -29,12 +30,11 @@ const Splash = () => {
                     color: '#fff',
                     textAlign: 'center',
                 }}
-                elevation={0}
-            >
+                elevation={0}>
                 {/* Logo */}
                 <CardMedia
                     component="img"
-                    image="/logo.svg" // Replace with actual logo path
+                    image={logo} // Replace with actual logo path
                     alt="Titan Forwarding Logo"
                     sx={{
                         width: 80,
@@ -61,7 +61,7 @@ const Splash = () => {
                     </Typography>
 
                     {/* CTA Button */}
-                    <Button variant="contained" color="primary" size="large">
+                    <Button variant="contained" color="secondary" sx={{color: 'rgba(0, 0, 0, 0.75)'}} size="large">
                         Explore Now
                     </Button>
                 </CardContent>

@@ -8,7 +8,7 @@ const pageVariants = {
 
 const PageTransitionWrapper = ({ children }) => (
     <motion.div
-        initial={false}
+        initial="initial"
         animate="animate"
         exit="exit"
         variants={pageVariants}

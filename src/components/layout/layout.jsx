@@ -17,10 +17,8 @@ const Layout = ({children}) => {
                 maxWidth: "100vw",
                 overflowX: 'hidden'
             }}
-            component={motion.div}
-            initial={{}}
-            exit={{}}
-            animate={{}}>
+            layout={true}
+            component={motion.div}>
             <Box sx={{display: "flex", flexDirection: "column"}}>
                 <Box>
                     <Header/>
